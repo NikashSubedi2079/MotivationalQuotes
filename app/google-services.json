@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "544467470444",
+    "project_id": "motivationquotes-6c915",
+    "storage_bucket": "motivationquotes-6c915.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544467470444:android:542b6a4b240e7894877049",
+        "android_client_info": {
+          "package_name": "com.example.motivationquotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544467470444-3k1flgrhluhet689rkbcq3vd8916jsji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGyRDJyVrfPywKFonoggBNwnKFcznDBCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544467470444-3k1flgrhluhet689rkbcq3vd8916jsji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
