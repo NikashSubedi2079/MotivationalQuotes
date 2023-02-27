@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.ViewHolder> {
-    Context context;
     ArrayList<model> arrModelQ;
 
     public QuotesAdapter(Context context, ArrayList<model> arrModelQ) {
@@ -20,7 +19,8 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.ViewHolder
         this.arrModelQ = arrModelQ;
     }
 
-    @NonNull
+    @NonNull    Context context;
+
     @Override
     public QuotesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.recycler_lyout,parent,false);

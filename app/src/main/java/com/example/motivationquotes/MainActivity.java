@@ -5,59 +5,56 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView rvQoutes;
-    ArrayList<model> arrayModel;
-    DatabaseReference databaseReference;
-    QuotesAdapter quotesAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        rvQoutes = findViewById(R.id.rvQoutes);
-
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("quotes");
-        rvQoutes.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-
-        arrayModel=new ArrayList<>();
-
-        quotesAdapter=new QuotesAdapter(MainActivity.this,arrayModel);
-        rvQoutes.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-
-        rvQoutes.setAdapter(quotesAdapter);
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
+//        for category one
+        findViewById(R.id.CatOne).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    model quote = dataSnapshot.getValue(model.class);
-                    boolean add = arrayModel.add(quote);
-                }
-                quotesAdapter.notifyDataSetChanged();
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
+                intent.putExtra("category","CatOne");
+                startActivity(intent);
             }
+        });
 
+//        for category two
+        findViewById(R.id.CatTwo).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("DATABASE_ERROR", "error");
-                System.out.println("error is" + error);
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
+                intent.putExtra("category","CatTwo");
+                startActivity(intent);
             }
+        });
 
+//        category three
+        findViewById(R.id.CatThree).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
+                intent.putExtra("category","CatThree");
+                startActivity(intent);
+            }
+        });
 
+//        category four
+        findViewById(R.id.CatFour).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
+                intent.putExtra("category","CatFour");
+                startActivity(intent);
+            }
         });
     }
 }
