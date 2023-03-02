@@ -16,4 +16,9 @@
     <string name="itemSettings">Settings</string>
     <string name="openDrawer">"Open "</string>
     <string name="closeDrawer">Close</string>
+    <string name="catSuccess">Success</string>
+    <string name="catLove">Love</string>
+    <string name="catLife">Life</string>
+    <string name="catSad">Sad</string>
+    <string name="catFamous">Famous</string>
 </resources>

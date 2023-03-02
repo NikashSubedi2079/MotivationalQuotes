@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -38,28 +39,19 @@ public class MainActivity extends AppCompatActivity {
                 R.string.openDrawer, R.string.closeDrawer);
         dlNavDrawer.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        loadFragment(new QuotesFragment(), 1);
+        loadFragment(new CategoryFragment(), 1);
         nvNavDrawer.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int id = item.getItemId();
-                if (id == R.id.itemLatest) {
-                    Fragment fragment = new QuotesFragment();
-                    loadFragment(fragment, 1);
-                } else if (id == R.id.itemCategory) {
-//                    Fragment fragment=new ExampleThreeFragment();
+                if (id == R.id.itemCategory) {
+                    Fragment fragment=new CategoryFragment();
 
-//                    loadFragment(fragment,0);
-                } else if (id == R.id.itemAuthors) {
-//                    Fragment fragment=new TopTurnoverFragment();
-//                    loadFragment(fragment,0);
-                } else if (id == R.id.itemFav) {
-//                    Fragment fragment=new TopGainerFragment();
-//                    loadFragment(fragment,0);
-                } else if (id == R.id.itemSettings) {
-//                    Fragment fragment=new TopLoserFragment();
-//                    loadFragment(fragment,0);
+                    loadFragment(fragment,1);
+                } else if (id == R.id.itemLatest) {
+                    Fragment fragment = new QuotesFragment();
+                    loadFragment(fragment, 0);
                 } else {
                     finish();
                 }
@@ -82,12 +74,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadFragment(Fragment fragment, int flag) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        if (flag == 1) {
-            ft.add(R.id.flMainContainer, fragment);
-        } else {
-
             ft.replace(R.id.flMainContainer, fragment);
-        }
         ft.commit();
 
 

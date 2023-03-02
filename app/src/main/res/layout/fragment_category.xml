@@ -3,12 +3,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoryFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context=".CategoryFragment"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
 
+           >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:gravity="center_vertical"
+           android:id="@+id/catSuccess"
+           android:background="@drawable/small_round_corner"
+           android:padding="10dp"
+           >
+           <ImageView
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:src="@drawable/sucess"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/catSuccess"
+               android:layout_weight="1"
+               android:layout_marginStart="20dp"
+               android:textColor="@color/black"
+               android:textSize="22dp"
+               />
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/catLove"
+            android:background="@drawable/small_round_corner"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/love"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/catLove"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/catLife"
+            android:background="@drawable/small_round_corner"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/life"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/catLife"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/catSad"
+            android:background="@drawable/small_round_corner"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/sad"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/catSad"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/catFamous"
+            android:background="@drawable/small_round_corner"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/warrent_buffett"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/catFamous"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
