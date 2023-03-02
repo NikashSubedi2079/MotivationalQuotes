@@ -1,97 +1,94 @@
 package com.example.motivationquotes;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
 
+public class MainActivity extends AppCompatActivity {
+    DrawerLayout dlNavDrawer;
+    NavigationView nvNavDrawer;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dlNavDrawer = findViewById(R.id.dlNavDrawer);
+        nvNavDrawer = findViewById(R.id.nvNavDrawer);
+        toolbar = findViewById(R.id.tbNavDrawer);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
+                MainActivity.this, dlNavDrawer, toolbar,
+                R.string.openDrawer, R.string.closeDrawer);
+        dlNavDrawer.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+        loadFragment(new QuotesFragment(), 1);
+        nvNavDrawer.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-//        for category one
-        findViewById(R.id.CatOne).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatOne");
-                startActivity(intent);
-            }
-        });
+                int id = item.getItemId();
+                if (id == R.id.itemLatest) {
+                    Fragment fragment = new QuotesFragment();
+                    loadFragment(fragment, 1);
+                } else if (id == R.id.itemCategory) {
+//                    Fragment fragment=new ExampleThreeFragment();
 
-//        for category two
-        findViewById(R.id.CatTwo).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatTwo");
-                startActivity(intent);
-            }
-        });
-
-//        category three
-        findViewById(R.id.CatThree).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatThree");
-                startActivity(intent);
-            }
-        });
-
-//        category four
-        findViewById(R.id.CatFour).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatFour");
-                startActivity(intent);
-            }
-        });
-// for cat five
-        findViewById(R.id.CatFive).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatFive");
-                startActivity(intent);
+//                    loadFragment(fragment,0);
+                } else if (id == R.id.itemAuthors) {
+//                    Fragment fragment=new TopTurnoverFragment();
+//                    loadFragment(fragment,0);
+                } else if (id == R.id.itemFav) {
+//                    Fragment fragment=new TopGainerFragment();
+//                    loadFragment(fragment,0);
+                } else if (id == R.id.itemSettings) {
+//                    Fragment fragment=new TopLoserFragment();
+//                    loadFragment(fragment,0);
+                } else {
+                    finish();
+                }
+                dlNavDrawer.closeDrawer(GravityCompat.START);
+                return true;
             }
         });
 
-        findViewById(R.id.CatSix).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatSix");
-                startActivity(intent);
-            }
-        });
+    }
 
-        findViewById(R.id.CatSeven).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatSeven");
-                startActivity(intent);
-            }
-        });
+    @Override
+    public void onBackPressed() {
+        if (dlNavDrawer.isDrawerOpen(GravityCompat.START)) {
+            dlNavDrawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
-        findViewById(R.id.CatEight).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,MainQuotesActivity.class);
-                intent.putExtra("category","CatEight");
-                startActivity(intent);
-            }
-        });
+    private void loadFragment(Fragment fragment, int flag) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        if (flag == 1) {
+            ft.add(R.id.flMainContainer, fragment);
+        } else {
+
+            ft.replace(R.id.flMainContainer, fragment);
+        }
+        ft.commit();
 
 
     }

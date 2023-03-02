@@ -76,11 +76,9 @@ public class QuotesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        quotesInitialize();
         rvQuotes = view.findViewById(R.id.rvQoutes);
         rvQuotes.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
+        quotesInitialize();
 
     }
 

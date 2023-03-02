@@ -33,6 +33,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.ViewHolder
             holder.tvAuthor.setText("- "+arrModelQ.get(position).getAuthor());
 
 
+
     }
 
     @Override
