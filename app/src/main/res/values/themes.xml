@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.MotivationQuotes" parent="Theme.MaterialComponents.Light.DarkActionBar">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">#0087EE</item>
         <item name="colorPrimaryVariant">#042988</item>
@@ -12,6 +13,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">#05A008</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="QBtheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">#3CDD43</item>
     </style>
 
 

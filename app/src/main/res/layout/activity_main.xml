@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:paddingVertical="20dp"
-    android:paddingHorizontal="10dp"
+
     >
 
 
@@ -42,9 +41,9 @@
     </com.google.android.material.appbar.AppBarLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="-50dp"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:layout_gravity="center"
         >
 
@@ -70,8 +69,8 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/background" />
+                        android:layout_height="91dp"
+                        android:src="@drawable/albert_einstein" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -100,21 +99,107 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/background" />
+                        android:layout_height="91dp"
+                        android:src="@drawable/elon_musk" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/catCAtegoryOne"
+                        android:text="@string/catCAtegoryTwo"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:fontFamily="cursive" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView> <androidx.cardview.widget.CardView
+            android:id="@+id/CatThree"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="91dp"
+                    android:src="@drawable/steve_jobs" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/catCAtegoryThree"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/CatThree"
+                android:id="@+id/CatFour"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:elevation="10dp"
+                app:cardCornerRadius="7dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="91dp"
+                        android:src="@drawable/mark_zuckerberg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/catCAtegoryFour"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:fontFamily="cursive" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView> <androidx.cardview.widget.CardView
+            android:id="@+id/CatFive"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            app:cardCornerRadius="7dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="91dp"
+                    android:src="@drawable/warrent_buffett" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/catCAtegoryFive"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CatSix"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -131,12 +216,12 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/background" />
+                        android:src="@drawable/bill_gates" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/catCAtegoryOne"
+                        android:text="@string/catCAtegorySix"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:fontFamily="cursive" />
@@ -144,7 +229,37 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/CatFour"
+                android:id="@+id/CatSeven"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:elevation="10dp"
+                app:cardCornerRadius="7dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sundar_pichai" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/catCAtegotySeven"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:fontFamily="cursive" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CatEight"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -162,7 +277,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/background" />
+                        android:src="@drawable/image3" />
 
                     <TextView
                         android:layout_width="wrap_content"

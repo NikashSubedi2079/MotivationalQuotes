@@ -31,6 +31,8 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.ViewHolder
     public void onBindViewHolder(@NonNull QuotesAdapter.ViewHolder holder, int position) {
             holder.tvQuote.setText("“ "+arrModelQ.get(position).getQuote()+" ”");
             holder.tvAuthor.setText("- "+arrModelQ.get(position).getAuthor());
+
+
     }
 
     @Override
